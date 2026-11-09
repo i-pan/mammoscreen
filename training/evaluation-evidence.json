@@ -1,0 +1,89 @@
+{
+  "source_repository": "https://github.com/i-pan/SKP",
+  "source_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+  "notebook": "notebooks/mammo/eval_model.ipynb",
+  "runs": [
+    {
+      "evaluation_split": 1,
+      "config": "mammo.cfg_ddsm_pretrained_aux_losses",
+      "run_id": "6a3b30f7",
+      "fold": 0
+    },
+    {
+      "evaluation_split": 1,
+      "config": "mammo.cfg_ddsm_pretrained_aux_losses_v02",
+      "run_id": "ddfeb3f6",
+      "fold": 1
+    },
+    {
+      "evaluation_split": 1,
+      "config": "mammo.cfg_ddsm_pretrained_aux_losses_v04",
+      "run_id": "b386692c",
+      "fold": 2
+    },
+    {
+      "evaluation_split": 2,
+      "config": "mammo.cfg_ddsm_pretrained_aux_losses",
+      "run_id": "c55fbaf7",
+      "fold": 0
+    },
+    {
+      "evaluation_split": 2,
+      "config": "mammo.cfg_ddsm_pretrained_aux_losses_v02",
+      "run_id": "fa6df1c9",
+      "fold": 1
+    },
+    {
+      "evaluation_split": 2,
+      "config": "mammo.cfg_ddsm_pretrained_aux_losses_v04",
+      "run_id": "cbbc1071",
+      "fold": 2
+    },
+    {
+      "evaluation_split": 3,
+      "config": "mammo.cfg_ddsm_pretrained_aux_losses",
+      "run_id": "6b00696a",
+      "fold": 0
+    },
+    {
+      "evaluation_split": 3,
+      "config": "mammo.cfg_ddsm_pretrained_aux_losses_v02",
+      "run_id": "387cf1fd",
+      "fold": 1
+    },
+    {
+      "evaluation_split": 3,
+      "config": "mammo.cfg_ddsm_pretrained_aux_losses_v04",
+      "run_id": "9c9a8feb",
+      "fold": 2
+    }
+  ],
+  "result_cells": [
+    {
+      "cell_index": 8,
+      "source": "pred_df1[\"y_pred3\"] = (pred_df1.y_pred0 + pred_df1.y_pred1 + pred_df1.y_pred2) / 3\nfor i in range(4):\n    auc = roc_auc_score(pred_df1.y_true.values, pred_df1[f\"y_pred{i}\"].values)\n    print(\"AUC:\", f\"{auc:0.4f}\")\n\npred_df1_grouped = pred_df1.groupby(\"breast_id\").mean(numeric_only=True)\nprint(\"\\n\")\n\nfor i in range(4):\n    auc = roc_auc_score(pred_df1_grouped.y_true.values, pred_df1_grouped[f\"y_pred{i}\"].values)\n    print(\"AUC:\", f\"{auc:0.4f}\")",
+      "stdout": "AUC: 0.8649\nAUC: 0.8684\nAUC: 0.8735\nAUC: 0.8883\n\n\nAUC: 0.9257\nAUC: 0.9370\nAUC: 0.9228\nAUC: 0.9464\n"
+    },
+    {
+      "cell_index": 12,
+      "source": "pred_df2[\"y_pred3\"] = (pred_df2.y_pred0 + pred_df2.y_pred1 + pred_df2.y_pred2) / 3\nfor i in range(4):\n    auc = roc_auc_score(pred_df2.y_true.values, pred_df2[f\"y_pred{i}\"].values)\n    print(\"AUC:\", f\"{auc:0.4f}\")\n\npred_df2_grouped = pred_df2.groupby(\"breast_id\").mean(numeric_only=True)\nprint(\"\\n\")\n\nfor i in range(4): \n    auc = roc_auc_score(pred_df2_grouped.y_true.values, pred_df2_grouped[f\"y_pred{i}\"].values)\n    print(\"AUC:\", f\"{auc:0.4f}\")",
+      "stdout": "AUC: 0.8847\nAUC: 0.8855\nAUC: 0.8919\nAUC: 0.9029\n\n\nAUC: 0.9284\nAUC: 0.9169\nAUC: 0.9359\nAUC: 0.9467\n"
+    },
+    {
+      "cell_index": 15,
+      "source": "pred_df3[\"y_pred3\"] = (pred_df3.y_pred0 + pred_df3.y_pred1 + pred_df3.y_pred2) / 3\nfor i in range(4):\n    auc = roc_auc_score(pred_df3.y_true.values, pred_df3[f\"y_pred{i}\"].values)\n    print(\"AUC:\", f\"{auc:0.4f}\")\n\npred_df3_grouped = pred_df3.groupby(\"breast_id\").mean(numeric_only=True)\nprint(\"\\n\")\n\nfor i in range(4): \n    auc = roc_auc_score(pred_df3_grouped.y_true.values, pred_df3_grouped[f\"y_pred{i}\"].values)\n    print(\"AUC:\", f\"{auc:0.4f}\")",
+      "stdout": "AUC: 0.8877\nAUC: 0.8965\nAUC: 0.8886\nAUC: 0.9054\n\n\nAUC: 0.9225\nAUC: 0.9253\nAUC: 0.9258\nAUC: 0.9422\n"
+    },
+    {
+      "cell_index": 16,
+      "source": "auc_list = []\nfor tmp_df in [pred_df1_grouped, pred_df2_grouped, pred_df3_grouped]:\n    auc = roc_auc_score(tmp_df.y_true.values, tmp_df.y_pred3.values)\n    auc_list.append(auc)\n\nprint(f\"Mean AUC: {np.mean(auc_list):0.4f}\")\nprint(f\"Std AUC: {np.std(auc_list):0.4f}\")",
+      "stdout": "Mean AUC: 0.9451\nStd AUC: 0.0020\n"
+    }
+  ],
+  "auc_by_split": [
+    0.9464,
+    0.9467,
+    0.9422
+  ],
+  "note": "Recorded historical results; not rerun. First evaluation set matches the model card first-split statement; tensor equivalence unverified."
+}

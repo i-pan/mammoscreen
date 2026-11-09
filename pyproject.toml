@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mammoscreen"
+version = "0.1.0"
+description = "Combined mammography cropping and cancer/density inference"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+dependencies = [
+  "torch>=2.6,<3", "torchvision>=0.21,<1", "transformers>=4.47,<5",
+  "timm>=1.0,<2", "albumentations>=1.4.24,<3", "numpy>=1.26,<3",
+  "opencv-python-headless>=4.9,<5", "safetensors>=0.4.5,<1",
+]
+
+[project.optional-dependencies]
+dicom = ["pydicom>=3,<4"]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1", "build>=1,<2"]
+
+[project.scripts]
+mammoscreen = "mammoscreen.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mammoscreen"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+exclude = ["src/mammoscreen/_models/**"]

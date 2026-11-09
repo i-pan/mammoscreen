@@ -1,0 +1,36 @@
+[
+  {
+    "path": "src/mammoscreen/_models/screen/configuration.py",
+    "repository": "ianpan/mammoscreen",
+    "revision": "b619a889a8214f3b3f9e7427c2603608a44e6d0a",
+    "sha256": "86d9f210099d2cadbaa0c0deb21475e35b9526e1cddf7bbec30cb6a8837cb0eb",
+    "upstream_sha256": "86d9f210099d2cadbaa0c0deb21475e35b9526e1cddf7bbec30cb6a8837cb0eb",
+    "modifications": []
+  },
+  {
+    "path": "src/mammoscreen/_models/screen/modeling.py",
+    "repository": "ianpan/mammoscreen",
+    "revision": "b619a889a8214f3b3f9e7427c2603608a44e6d0a",
+    "sha256": "797244cdfdfa44c959b7fef53ab9cffe453f3231544f059648be27114bc68322",
+    "upstream_sha256": "4acc8b59c49a86181873d9b41c6e6edf2562d92843f8ec985aedeaea6330e165",
+    "modifications": [
+      "Explicit reflection padding matches preserved square training config b386692c; added cv2 import"
+    ]
+  },
+  {
+    "path": "src/mammoscreen/_models/crop/configuration.py",
+    "repository": "ianpan/mammo-crop",
+    "revision": "bec2e302d47176d743a86d276d8402f876ad0f9f",
+    "sha256": "9a75748860ab5e1571b6cc1fcaaa664187a340fc0663dd5fb75285ed4623bcbc",
+    "upstream_sha256": "9a75748860ab5e1571b6cc1fcaaa664187a340fc0663dd5fb75285ed4623bcbc",
+    "modifications": []
+  },
+  {
+    "path": "src/mammoscreen/_models/crop/modeling.py",
+    "repository": "ianpan/mammo-crop",
+    "revision": "bec2e302d47176d743a86d276d8402f876ad0f9f",
+    "sha256": "589ae0e0ec6b97efdac31e525ca1d8ed2bb355e1e7556a8b33be4a5bec30e4c2",
+    "upstream_sha256": "589ae0e0ec6b97efdac31e525ca1d8ed2bb355e1e7556a8b33be4a5bec30e4c2",
+    "modifications": []
+  }
+]

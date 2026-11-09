@@ -1,0 +1,13 @@
+Mammoscreen
+Copyright 2026 Ian Pan
+
+Model implementations under src/mammoscreen/_models are derived from:
+ianpan/mammoscreen, revision b619a889a8214f3b3f9e7427c2603608a44e6d0a
+ianpan/mammo-crop, revision bec2e302d47176d743a86d276d8402f876ad0f9f
+Both Hugging Face model repositories declare Apache-2.0 licensing.
+The screening implementation explicitly selects reflection padding for the
+square model, matching its preserved training configuration rather than a
+version-dependent Albumentations default.
+
+Recovered training source under training/skp originates from i-pan/SKP
+and a preserved local snapshot. SKP source and configs are MIT licensed; see training/LICENSE.

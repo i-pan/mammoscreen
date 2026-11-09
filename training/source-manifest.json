@@ -1,0 +1,564 @@
+{
+  "created_at": "2026-11-09T12:12:05.015893+00:00",
+  "selection": "Mammography configs, dynamically referenced components, static local import closure, runner and evaluation utilities",
+  "files": [
+    {
+      "path": "training/skp/callbacks/__init__.py",
+      "sha256": "5b50e840ec0da76c2aa7beb1d3a6b664df4f4ddcdd5c55e982fb3d322b007788",
+      "origin": "recovered-upstream/skp/callbacks/__init__.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/callbacks/ema.py",
+      "sha256": "75e02bbefa147e1f1d2ffc0495e2581337ba5a3a79d94cb2a82c63f5710f95fa",
+      "origin": "recovered-upstream/skp/callbacks/ema.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/callbacks/ema_callback.py",
+      "sha256": "149da8878ac6d86ec7bb2032b382d3d7addf68faeea48dc688dcc7520e699355",
+      "origin": "recovered-upstream/skp/callbacks/ema_callback.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/callbacks/gpu_stats_logger.py",
+      "sha256": "bb0c608d9a761f2a504a809bd62c55c083c3dc02100c26ec284d48a42a15da57",
+      "origin": "recovered-upstream/skp/callbacks/gpu_stats_logger.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/callbacks/utils.py",
+      "sha256": "5db04b8fdbfb76e968d5b0e4139bcbe3da95904be7b9b36fb3624f0aed993f63",
+      "origin": "recovered-upstream/skp/callbacks/utils.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/configs/__init__.py",
+      "sha256": "6c02626af1cb4753f5833c67ec7a78535bfc9adb16f51c34a458297c32af78d4",
+      "origin": "recovered-upstream/skp/configs/__init__.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/configs/base.py",
+      "sha256": "44c5a34e69b37f123b2554c3deaf043745e1aaf61915496d8b641f4bb327ffa7",
+      "origin": "recovered-upstream/skp/configs/base.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "9a016999899acabacec88f093d210e7e174a78a614226fa4236a945a0559655e",
+      "modifications": [
+        "Normalize trailing whitespace; implementation unchanged"
+      ]
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_baseline.py",
+      "sha256": "1f0231872c33c6d0fa695c5359ba27d2a5da83cbabd1a33f287bd3f40e60607c",
+      "origin": "preserved-local/configs/mammo/cfg_baseline.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "1f0231872c33c6d0fa695c5359ba27d2a5da83cbabd1a33f287bd3f40e60607c",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_baseline_aux_losses.py",
+      "sha256": "291cc917ff6bcfe6576a65dd3d09cdbd82696dac5936bf6c9d2cb5a80767dfd8",
+      "origin": "preserved-local/configs/mammo/cfg_baseline_aux_losses.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "291cc917ff6bcfe6576a65dd3d09cdbd82696dac5936bf6c9d2cb5a80767dfd8",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_baseline_aux_losses_wt_sample.py",
+      "sha256": "ef9f82f91852fdce9aff39e89419b3ea96ec0d3d8155d98e971245015fad21a3",
+      "origin": "preserved-local/configs/mammo/cfg_baseline_aux_losses_wt_sample.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "ef9f82f91852fdce9aff39e89419b3ea96ec0d3d8155d98e971245015fad21a3",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_crop.py",
+      "sha256": "d7f23d9375e0df659a1367c17fac4c978cc3e3034fc3baf04baa0c5df33d52f1",
+      "origin": "preserved-local/configs/mammo/cfg_crop.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "d7f23d9375e0df659a1367c17fac4c978cc3e3034fc3baf04baa0c5df33d52f1",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_patch_attn.py",
+      "sha256": "02d259e2e1c4008f40c0dc812a97ba852cfa9d11852c5a2873504ad1d87e6aaa",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_patch_attn.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "02d259e2e1c4008f40c0dc812a97ba852cfa9d11852c5a2873504ad1d87e6aaa",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_patch_attn_v02.py",
+      "sha256": "5da4b45c9232a91de0024a9829f810681bef4c5e1fb915cdaf16b0d8cfeec433",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_patch_attn_v02.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "5da4b45c9232a91de0024a9829f810681bef4c5e1fb915cdaf16b0d8cfeec433",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_pretrained.py",
+      "sha256": "93dae6a80337c8bb3d929e007b7af6964dae2f457198fa0d98c5437905bd1e18",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_pretrained.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "beae49950003071f9c6b6d0057bbb828b44439cff239f6b9685f35fe064ed4d5",
+      "modifications": [
+        "Normalize trailing whitespace"
+      ]
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_pretrained_aux_losses.py",
+      "sha256": "d8b445337ae6a109c7921ca22d84af8b16e8df43567e2ea4a2b38d98f430c1ed",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_pretrained_aux_losses.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "d8b445337ae6a109c7921ca22d84af8b16e8df43567e2ea4a2b38d98f430c1ed",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_pretrained_aux_losses_v02.py",
+      "sha256": "f4108a25ad40636c56f4105e47a535fa4c37b3f9aa1c6bc115a7a68a8f065902",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_pretrained_aux_losses_v02.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "f4108a25ad40636c56f4105e47a535fa4c37b3f9aa1c6bc115a7a68a8f065902",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_pretrained_aux_losses_v03.py",
+      "sha256": "409d4619ec15ffc1ee9e4f99cbb53bcc34465311c57217b0a3d8a4e8b835905a",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_pretrained_aux_losses_v03.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "409d4619ec15ffc1ee9e4f99cbb53bcc34465311c57217b0a3d8a4e8b835905a",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_pretrained_aux_losses_v04.py",
+      "sha256": "c9a528cbd4267b5788ecc272ab896960c244e4d9c53363c1aa1c559f7a184de2",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_pretrained_aux_losses_v04.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "c9a528cbd4267b5788ecc272ab896960c244e4d9c53363c1aa1c559f7a184de2",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_seg_cls.py",
+      "sha256": "fc69daa07a1e843a3ea8078f8982c321bbb084e06dd1b537a55e534eb8f70bde",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_seg_cls.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "2ac25584435cb3ab7adf611ca478f48eb54a1cceb1c925a2507a34d6a16b2f7c",
+      "modifications": [
+        "Normalize trailing whitespace"
+      ]
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_seg_cls_patch.py",
+      "sha256": "7b5ae6b9bc73e8c8a062431a040b3dbbb12ccd5f4686844c129e0d29d8d20fa7",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_seg_cls_patch.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "7b5ae6b9bc73e8c8a062431a040b3dbbb12ccd5f4686844c129e0d29d8d20fa7",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_seg_cls_patch_v02.py",
+      "sha256": "0ba48f1b8db3289aeae73e1a028eb7c750f5840116bfd63d887b4e3decfcc844",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_seg_cls_patch_v02.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "0ba48f1b8db3289aeae73e1a028eb7c750f5840116bfd63d887b4e3decfcc844",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_seg_cls_v02.py",
+      "sha256": "746c49fd71a38260ab4fc4e66c32d257a910c478a4b0c49fb70e3fadd182dfa6",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_seg_cls_v02.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "746c49fd71a38260ab4fc4e66c32d257a910c478a4b0c49fb70e3fadd182dfa6",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_seg_cls_v03.py",
+      "sha256": "77dc79740d0f84758521fb20ac14f02f79c8098511bfb453f56158bf4a95fe30",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_seg_cls_v03.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "77dc79740d0f84758521fb20ac14f02f79c8098511bfb453f56158bf4a95fe30",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_seg_cls_v04.py",
+      "sha256": "f3d38b1e653ae8f8d0e9e6dd78633a4853da52edb39553518087b96d54f9a7cb",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_seg_cls_v04.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "f3d38b1e653ae8f8d0e9e6dd78633a4853da52edb39553518087b96d54f9a7cb",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_ddsm_seg_cls_v05.py",
+      "sha256": "879677edeb2ee7d713f0c30c0c647176552ea3f5c020037fabb63b7adb2719f8",
+      "origin": "preserved-local/configs/mammo/cfg_ddsm_seg_cls_v05.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "879677edeb2ee7d713f0c30c0c647176552ea3f5c020037fabb63b7adb2719f8",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_fuse_view_attn.py",
+      "sha256": "7e5c2ee9583fa78da7c1b0209fcd2737c5de7b94f9e6b1d6a122ca7c0335ba3f",
+      "origin": "preserved-local/configs/mammo/cfg_fuse_view_attn.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "7e5c2ee9583fa78da7c1b0209fcd2737c5de7b94f9e6b1d6a122ca7c0335ba3f",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_fuse_view_attn_v02.py",
+      "sha256": "a8aa7807706e41f852a72e4f7aa2616a76c9bda48e1018d1c7233484d7134944",
+      "origin": "preserved-local/configs/mammo/cfg_fuse_view_attn_v02.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "a8aa7807706e41f852a72e4f7aa2616a76c9bda48e1018d1c7233484d7134944",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_fuse_view_attn_v04.py",
+      "sha256": "1c393bc8bef05f429183848a74e32ad36955a7a6019383c1b29bd4336aa9a217",
+      "origin": "preserved-local/configs/mammo/cfg_fuse_view_attn_v04.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "1c393bc8bef05f429183848a74e32ad36955a7a6019383c1b29bd4336aa9a217",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_patch_attn_from_pretrained.py",
+      "sha256": "8f8db40e55e6f2f21532e686ec1c6157b08d7e95a082a6a1af13c25c87d80de3",
+      "origin": "preserved-local/configs/mammo/cfg_patch_attn_from_pretrained.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "8f8db40e55e6f2f21532e686ec1c6157b08d7e95a082a6a1af13c25c87d80de3",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/configs/mammo/cfg_resnet18.py",
+      "sha256": "f7f4843d9178c1e8cfaaf883e1c425e9cd455fc29381faf7459fd19d5bef9f4d",
+      "origin": "preserved-local/configs/mammo/cfg_resnet18.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "f7f4843d9178c1e8cfaaf883e1c425e9cd455fc29381faf7459fd19d5bef9f4d",
+      "modifications": []
+    },
+    {
+      "path": "training/skp/datasets/crop2d.py",
+      "sha256": "055590362065b46529f97dced70d0bd795e25eee09054991cae3964c575481a1",
+      "origin": "recovered-upstream/skp/datasets/crop2d.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/datasets/mammo/cls.py",
+      "sha256": "8c579b91115f59eeb31f6c0e631f0cb92e1cdaad45ffcc24d86cfe2cfb8583fc",
+      "origin": "recovered-upstream/skp/datasets/mammo/cls.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/datasets/mammo/cls_fuse.py",
+      "sha256": "05fd073c357554c87a608cc2b4dc14367d887a2f24e638190884890d2e50b14f",
+      "origin": "recovered-upstream/skp/datasets/mammo/cls_fuse.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/datasets/mammo/cls_patch.py",
+      "sha256": "9fdd0c184b154f12d4f9dab9046c041a237fe983010f3d0aa9262af801ccaa20",
+      "origin": "recovered-upstream/skp/datasets/mammo/cls_patch.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/datasets/mammo/seg_cls.py",
+      "sha256": "4ec86ecc44362a475f24a206e0326689b7c477d140af39a3e66211d8d0e6d24c",
+      "origin": "recovered-upstream/skp/datasets/mammo/seg_cls.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/datasets/mammo/seg_cls_patch.py",
+      "sha256": "145c2cf33d25dfc9cc03ac380b742596ef1ad0d56179f67b7eb1e0c5cfe3b0b6",
+      "origin": "recovered-upstream/skp/datasets/mammo/seg_cls_patch.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/datasets/mammo/seg_cls_patches_from_disk.py",
+      "sha256": "2fd660e9638afa2ec458b7b8dc1c3a9ff735d80fd59d0cf68d90f564583f7a38",
+      "origin": "recovered-upstream/skp/datasets/mammo/seg_cls_patches_from_disk.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/datasets/simple2d.py",
+      "sha256": "50751d5bd1a959a0f103e8dd05cd7511ebbdc4e8f02f725ab9fe3f059ae286ce",
+      "origin": "recovered-upstream/skp/datasets/simple2d.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/losses/__init__.py",
+      "sha256": "a630daff519607cb0c05a9f1c4c43c05e0ae923ffcb1cc359c3ce14b85d8cc98",
+      "origin": "recovered-upstream/skp/losses/__init__.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "fa3a40259f1a476051924b5e2eb8d8165bf2528fbc9b4f650ec6e58678a19f3b",
+      "modifications": [
+        "Normalize trailing whitespace; implementation unchanged"
+      ]
+    },
+    {
+      "path": "training/skp/losses/classification.py",
+      "sha256": "d66ba9d16c566762d65a63c7254868347afe42bd9347a6b6464798b549ef1bd0",
+      "origin": "recovered-upstream/skp/losses/classification.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "2588478f405bd022f7abe16a97be88a3035ec9fe40492da7a05fec1a6496b974",
+      "modifications": [
+        "Normalize trailing whitespace; implementation unchanged"
+      ]
+    },
+    {
+      "path": "training/skp/losses/combined.py",
+      "sha256": "82ffd70a03b5579b5fbfccce5d7a55b741ea56790960abd0d0a9247771209c0f",
+      "origin": "recovered-upstream/skp/losses/combined.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/losses/custom.py",
+      "sha256": "18f780d45e263378c4835d1c4786c68ca78d702f9ef6a5ddfd181200f5dca8a0",
+      "origin": "recovered-upstream/skp/losses/custom.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/losses/monai.py",
+      "sha256": "9f23eda83223deadbf7d3b766ed569ef74515628fcc6c5165b5dc2ec02242eb8",
+      "origin": "recovered-upstream/skp/losses/monai.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "58c1cd12876c7ca4bc6507b1d555f7342251529f48f94c0d25376ae989bb7510",
+      "modifications": [
+        "Normalize trailing whitespace; implementation unchanged"
+      ]
+    },
+    {
+      "path": "training/skp/losses/segmentation.py",
+      "sha256": "1f5697c72ee770ac8eac06d2ead26e67b245761868dc67be62dda92c21651d01",
+      "origin": "recovered-upstream/skp/losses/segmentation.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/losses/stochastic_loss.py",
+      "sha256": "be67d1b3a2f4b145f19f8c61c30e63f055a8dc67cbca207ba7eb6b0fd7310614",
+      "origin": "recovered-upstream/skp/losses/stochastic_loss.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/metrics/classification.py",
+      "sha256": "dd42aece97e19cef44b3634207a33989f6d1037ed7488fc3140bc51a5adef2eb",
+      "origin": "recovered-upstream/skp/metrics/classification.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/metrics/custom_cls.py",
+      "sha256": "2b1d60ab3438b25462dd9cd99d953dfdd8d652d5903e6d5ef142e2f618b9446c",
+      "origin": "recovered-upstream/skp/metrics/custom_cls.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/metrics/segmentation.py",
+      "sha256": "2b43e2b7e97a5c5d9b19c262f71f9caf0c2b32b974a072b59c450748ebc0de4b",
+      "origin": "recovered-upstream/skp/metrics/segmentation.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/metrics/utils.py",
+      "sha256": "b283a5a841433c7c3b71ce704492cccae3e7b43fa02d9877de2aff1100116f66",
+      "origin": "recovered-upstream/skp/metrics/utils.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/MIL/net2d_attn_v02.py",
+      "sha256": "653cce8f3929e17a0e05b2de67bb9de5da3769bc6bf6c880b0e5c93fb3ada1d0",
+      "origin": "recovered-upstream/skp/models/MIL/net2d_attn_v02.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/MIL/net2d_simple_attn.py",
+      "sha256": "34d704129b8b6c3bfc4dce29e4c05f178217cff46c0b203e11d585a995105369",
+      "origin": "recovered-upstream/skp/models/MIL/net2d_simple_attn.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/MIL/net2d_transformer.py",
+      "sha256": "bef9490d6c1d527377b93748f9d894ae5cb3655a0d5277b7c2c247905fbe3d93",
+      "origin": "recovered-upstream/skp/models/MIL/net2d_transformer.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/classification/net2d.py",
+      "sha256": "51e4eb2d82946a4e0a70da34980e859f7f065368142fc1e05e1e865bef120029",
+      "origin": "recovered-upstream/skp/models/classification/net2d.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "4b3cd1620d1397e3c69e4ab823749f9b2914ab01825c1c7ea2ad8333d7e8125a",
+      "modifications": [
+        "Normalize trailing whitespace; implementation unchanged"
+      ]
+    },
+    {
+      "path": "training/skp/models/convsqueeze3d.py",
+      "sha256": "bcf065d22bf66717b55052c9ab6bf84225df1f163ff6e33045e9ae03f5871534",
+      "origin": "recovered-upstream/skp/models/convsqueeze3d.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/modules.py",
+      "sha256": "b1f79dc36ec0caa5129cf4c03c69dd6c42b146e25690a8003f42d69670851c64",
+      "origin": "recovered-upstream/skp/models/modules.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/pooling.py",
+      "sha256": "adcfb24df61fddb73c1f013809d6ca07d776cd9404edb5f80806228ef0037eab",
+      "origin": "recovered-upstream/skp/models/pooling.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/segmentation/base.py",
+      "sha256": "c98c97812fbe87ea7603965c4a562be2465049534f83f4ac913c306408b5f82b",
+      "origin": "recovered-upstream/skp/models/segmentation/base.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/segmentation/decoders/__init__.py",
+      "sha256": "cb61b701a9e36f1b44bb81d062e1c1387fe99ff329c231baa0e3e54ee504884d",
+      "origin": "recovered-upstream/skp/models/segmentation/decoders/__init__.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/segmentation/decoders/deeplabv3.py",
+      "sha256": "5b88960e576a160e459b5ad96fdcbb44356ff1b0314713b33d1072ead3d7df77",
+      "origin": "recovered-upstream/skp/models/segmentation/decoders/deeplabv3.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/segmentation/decoders/deeplabv3_3d.py",
+      "sha256": "118406792c5c2c9a9b2beb71e527b5c1967205fb5f3762898fcae9c042397cf1",
+      "origin": "recovered-upstream/skp/models/segmentation/decoders/deeplabv3_3d.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/segmentation/decoders/unet.py",
+      "sha256": "e283f16ab1a63f50945ce5e287464a9971ab47eb048242b3b5cb59c8053c7433",
+      "origin": "recovered-upstream/skp/models/segmentation/decoders/unet.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/segmentation/decoders/unet_3d.py",
+      "sha256": "96b8c1debac4f0ac423509ad33665954ef7a24991e4280c473a2f003233c7238",
+      "origin": "recovered-upstream/skp/models/segmentation/decoders/unet_3d.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/segmentation/decoders/unext_3d.py",
+      "sha256": "824d06df5010c8f83146c89f3e8102939e7988d5e189426264e2d9b97fca3e59",
+      "origin": "recovered-upstream/skp/models/segmentation/decoders/unext_3d.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/segmentation/decoders/upernet.py",
+      "sha256": "5999a5e4900f5d34adde324354023940145237e85a5dabfe731b5b25736ec91a",
+      "origin": "recovered-upstream/skp/models/segmentation/decoders/upernet.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "6884af822291a284c79b65e7effd006a7c4b7c1ca57c9e697fcce0f5d4d2b4ac",
+      "modifications": [
+        "Normalize trailing whitespace; implementation unchanged"
+      ]
+    },
+    {
+      "path": "training/skp/models/segmentation/seg_cls.py",
+      "sha256": "8459ffc885edaed9a15b14bf5160e9fe164440c9904006df02b63732182bf0c4",
+      "origin": "recovered-upstream/skp/models/segmentation/seg_cls.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/models/utils.py",
+      "sha256": "8a6fbf26639ef4b5ade37d6409a12a6e59c464a242836e3d7de2304360aafd04",
+      "origin": "recovered-upstream/skp/models/utils.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/optim/__init__.py",
+      "sha256": "643a21b5d38fb823a7372ce6f448d89ceb1d744dbb54c60c10c66140c02518cb",
+      "origin": "recovered-upstream/skp/optim/__init__.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/optim/adamp.py",
+      "sha256": "736c222621087e4a93b1885668bad5084b233ac9c34f042c7bd76a5e5b76ae89",
+      "origin": "recovered-upstream/skp/optim/adamp.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/optim/linear_warmup_cosine_annealing.py",
+      "sha256": "59fc108a103b199bbf2636d83c50567e39000de42eaf7470e50df9dad3eeb1d8",
+      "origin": "recovered-upstream/skp/optim/linear_warmup_cosine_annealing.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/tasks/classification.py",
+      "sha256": "31a66559bc55ba92b4b88d0d885600e0f31548316709f4bd6f18b19e0b728fdd",
+      "origin": "recovered-upstream/skp/tasks/classification.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/tasks/cls_seg.py",
+      "sha256": "8bc6f517df9c19f37b4f67c276a1843e3da673fa1475b2f866d57c40a491f973",
+      "origin": "recovered-upstream/skp/tasks/cls_seg.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/tasks/samplers.py",
+      "sha256": "70963c03ce567fefc9c34f5afb10a5924173ef696009fd805816537da611556b",
+      "origin": "recovered-upstream/skp/tasks/samplers.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157",
+      "origin_sha256": "85283eca63511e9f9de870006129b9e254795ee12026cdeedfc682d3859d52cb",
+      "modifications": [
+        "Normalize trailing whitespace; implementation unchanged"
+      ]
+    },
+    {
+      "path": "training/skp/tasks/utils.py",
+      "sha256": "0f2ef790c3b472290c7f791f7bf39ab903732a3ad572022a00c45c3d3923b6da",
+      "origin": "recovered-upstream/skp/tasks/utils.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/toolbox/functions.py",
+      "sha256": "e8ce250bc5bd8e71d6040fc1d75d55afd9b85653e25b61cbb3b7f1e701210067",
+      "origin": "recovered-upstream/skp/toolbox/functions.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/toolbox/halton.py",
+      "sha256": "6ab8ed113334dee012a0ad6765fcb832fc030da520e7dbd48d67cf1c2560661e",
+      "origin": "recovered-upstream/skp/toolbox/halton.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/skp/train.py",
+      "sha256": "44ef3b9aad14d4a104cfd26d5782772a64990468fb3f791b98e4bff9629864e1",
+      "origin": "recovered-upstream/skp/train.py",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/notebooks/eval_automodel.ipynb",
+      "sha256": "bb488a38191ee6591597c8cbe65b42846e46ffdfd465d5043daff41b82ba6eae",
+      "origin": "recovered-upstream/notebooks/mammo/eval_automodel.ipynb",
+      "upstream_sha256": "dbc28fdefdd4cc5834c7a69db0de192070411a16573078cf1849631840fc0758",
+      "modifications": "Clear outputs/execution counters; add warning markdown for unfinished copied tail; preserve original code and markdown",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/notebooks/eval_model.ipynb",
+      "sha256": "a436ab4b71e435f210150552f9dbef90379ce9afe4f0c6686089d9ac1117cfad",
+      "origin": "recovered-upstream/notebooks/mammo/eval_model.ipynb",
+      "upstream_sha256": "b0b1aae168b97e628c4af03f3621314e1e597f2338e5fe0b4918e392a50406f7",
+      "modifications": "Clear outputs/execution counters; preserve code and markdown",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    },
+    {
+      "path": "training/notebooks/test_model.ipynb",
+      "sha256": "108ccc112e0e15be738548878ba722beef1ef4b141b7520f347e1bf8503c5e5b",
+      "origin": "recovered-upstream/notebooks/mammo/test_model.ipynb",
+      "upstream_sha256": "7436c594fffc22b7ac171cf69a513c225a723747807e373c6309c94fe64929be",
+      "modifications": "Clear outputs/execution counters; preserve code and markdown",
+      "upstream_revision": "81305a8aa81872791a01894ce6b1b6cb242b7157"
+    }
+  ]
+}

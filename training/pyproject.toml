@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mammoscreen-training"
+version = "0.1.0"
+description = "Recovered SKP mammography training source"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+  "albumentations>=1.4.24,<3", "einops", "matplotlib", "numpy", "pandas",
+  "opencv-python-headless", "timm", "torch>=2.1", "torchvision",
+  "lightning>=2.4,<3", "monai", "neptune<2", "scikit-learn", "scikit-image",
+  "scipy", "torchmetrics", "torcheval", "webdataset",
+]
+
+[project.optional-dependencies]
+evaluation = ["transformers>=4.47,<5", "pydicom>=3,<4"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["skp*"]
+namespaces = true
