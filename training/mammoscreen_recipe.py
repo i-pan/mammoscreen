@@ -286,7 +286,18 @@ def train_locally(argv):
     sys.path.insert(0, str(ROOT / 'skp'))
     spec = importlib.util.spec_from_file_location('mammoscreen_historical_train', ROOT / 'skp/train.py')
     runner = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(runner)
+    # New Lightning releases removed NeptuneLogger. Supply the archived import
+    # only while loading this module; active runs always use our local logger.
+    from lightning.pytorch import loggers
+    original_logger = getattr(loggers, 'NeptuneLogger', None)
+    loggers.NeptuneLogger = LocalTrainingLogger
+    try:
+        spec.loader.exec_module(runner)
+    finally:
+        if original_logger is None:
+            del loggers.NeptuneLogger
+        else:
+            loggers.NeptuneLogger = original_logger
     runner.NeptuneLogger = LocalTrainingLogger
     # Lightning DDP re-executes the active module with sys.argv. Keep _train
     # there so child ranks apply this adapter too; only hide it while parsing.

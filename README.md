@@ -18,7 +18,8 @@ The crop model uses MobileNetV3-Small to regress an `xywh` bounding box and remo
 | --- | --- |
 | Training setup, stages, data contracts, and example commands | [Training guide](training/README.md) |
 | DICOM conversion, crop/mask preparation and split generation | [Data preparation](training/data_preparation/README.md) |
-| Training entry point | [training/skp/train.py](training/skp/train.py) |
+| Active training/evaluation launcher | [training/mammoscreen_recipe.py](training/mammoscreen_recipe.py) |
+| Preserved historical runner | [training/skp/train.py](training/skp/train.py) |
 | Mammography recipes | [training/skp/configs/mammo/](training/skp/configs/mammo/) |
 | Training models, datasets, losses, metrics, and EMA | [training/skp/](training/skp/) |
 | Evaluation notebooks | [training/notebooks/](training/notebooks/) |
@@ -40,11 +41,11 @@ The preserved evaluation notebook records breast-level ensemble AUCs **0.9464, 0
 
 The training subtree contains a mammography-focused selection of the original [SKP framework](https://github.com/i-pan/SKP/tree/81305a8aa81872791a01894ce6b1b6cb242b7157), plus preserved local mammography configs. Shared modules retain their original implementation, including some generic classes used by other projects. [Source hashes](training/source-manifest.json) distinguish upstream code from the local config snapshot. Notebook outputs are cleared; numerical evaluation evidence is preserved separately.
 
-This is a training-code companion, not a claim of an exact historical environment or a newly rerun study. Original data, split CSVs, pretrained initialization files, private run records, and weights are not bundled. Paths and tracking settings require adaptation to a new machine. These gaps do not change the recorded training evidence. No training was launched during source recovery.
+This is a training-code companion, not a claim of an exact historical environment or a newly rerun study. Original data, split CSVs, pretrained initialization files, private run records, and weights are not bundled. The active recipe binds your data/output paths and uses local logging; historical examples retain original paths and tracking settings. These gaps do not change the recorded training evidence. No training was launched during source recovery.
 
 ## Validation
 
-Training source and import coverage are checked statically. A synthetic screening-loss check uses the recovered implementation. The optional inference integration has its own tests and a real-weight CPU smoke check; those checks do not certify training or clinical performance. See [validation](docs/VALIDATION.md) and [training review scope](docs/TRAINING_REVIEW.md).
+Training source and import coverage are checked, and a bounded CPU lifecycle exercises all three real DDSM and screening models through validation, checkpoint/EMA saving and evaluation on synthetic data. Compressed-DICOM conversion and the paired crop/fold preparation handoffs were also exercised; see [bounded pipeline verification](docs/PIPELINE_VERIFICATION.md) for exact overrides and remaining limits. The optional inference integration has its own tests and a real-weight CPU smoke check; those checks do not certify training or clinical performance. See [validation](docs/VALIDATION.md) and [training review scope](docs/TRAINING_REVIEW.md).
 
 ## License
 

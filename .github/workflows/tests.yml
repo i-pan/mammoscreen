@@ -15,3 +15,13 @@ jobs:
       - run: ruff check training/data_preparation/corrected training/mammoscreen_recipe.py training/mammoscreen_logging.py
       - run: python -m build
       - run: python -m build --wheel training
+  training-lifecycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -e 'training[processing,evaluation]' pytest
+      - run: MAMMOSCREEN_RUN_LIFECYCLE=1 pytest -q tests/test_training_lifecycle.py

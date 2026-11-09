@@ -1,6 +1,6 @@
 # Corrected end to end training recipe
 
-This is the active route for a new experiment. Historical notebooks/configs remain source evidence; do not combine their default split paths with this recipe. A new run can have different seeds, split membership and metrics. No full data preparation or training was executed while implementing these corrections.
+This is the active route for a new experiment. Historical notebooks/configs remain source evidence; do not combine their default split paths with this recipe. A new run can have different seeds, split membership and metrics. No full data preparation or training was executed. A bounded synthetic CPU lifecycle check is recorded in the [verification report](../docs/PIPELINE_VERIFICATION.md).
 
 ## 1 Obtain inputs and install
 
@@ -12,7 +12,7 @@ From the repository root, in your chosen training environment with an appropriat
 pip install -e 'training[processing,evaluation]'
 ```
 
-This installs `mammoscreen-splits` and `mammoscreen-recipe`; equivalent source commands are shown below. CUDA hardware is required for the training recipe. The active launcher adapts the preserved runner to save configuration and metrics locally in each fold's `logs/events.jsonl`; no tracking account is needed. `--project` is an optional local experiment label. Original public timm ImageNet initialization is used for DDSM pretraining. The published HF crop model can be used as a supplied preprocessing model, avoiding any circular dependency on retraining it.
+This installs `mammoscreen-splits` and `mammoscreen-recipe`; equivalent source commands are shown below. CUDA hardware is required for the training recipe. JPEG2000 DICOM decoding needs Pillow built with OpenJPEG support (as in the tested wheels); if your build lacks it, install `pylibjpeg` and `pylibjpeg-openjpeg`. The active launcher adapts the preserved runner to save configuration and metrics locally in each fold's `logs/events.jsonl`; no tracking account is needed. `--project` is an optional local experiment label. Original public timm ImageNet initialization is used for DDSM pretraining. The published HF crop model can be used as a supplied preprocessing model, avoiding any circular dependency on retraining it.
 
 ## 2 Prepare DDSM and RSNA images
 
@@ -116,3 +116,5 @@ Evaluate sets 2/3 with their own `--set` and fresh output directories. No histor
 ## Verification limits
 
 Synthetic checks cover local RNG state, distinct patient partitions, leak rejection, actual active config routing, generated checkpoint paths, launcher arguments, CSV identity and probability aggregation/AUC. Full dataset ETL, training, remote tracking and GPU evaluation were not run during implementation. Missing local datasets can be downloaded again; unavailable current training dependencies must be installed in the chosen environment before actual launches.
+
+For runtime evidence, observed dependency versions, the opt-in tiny lifecycle check and remaining GPU/real-data limits, see [bounded pipeline verification](../docs/PIPELINE_VERIFICATION.md).

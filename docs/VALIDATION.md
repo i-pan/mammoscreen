@@ -27,3 +27,9 @@ The corrected splitter and active recipe are checked with synthetic patient tabl
 The historical data, config and notebook sources remain unchanged. The new recipe is a usable new-experiment route, not a claim to recreate historical split memberships or exact original weights. Independent source review found no remaining material handoff/leakage findings for the documented screening route.
 
 The active runner uses a separate local Lightning logger; archived runner bytes remain unchanged. Two bounded tests exercise real Lightning 2.6.6 channel/metric writes, tensor serialization, nonzero-rank suppression and the training adapter's argument handling. DDP relaunch keeps the recipe module and `_train` arguments so each rank applies the logger adapter. No actual distributed process group or training loop was launched. The local suite now contains 30 passing tests.
+
+## Bounded lifecycle follow-up
+
+The [pipeline verification record](PIPELINE_VERIFICATION.md) adds actual six-model synthetic CPU train/validate/checkpoint/EMA/evaluation checks, compressed-DICOM conversion and real crop-model ETL checks. These checks found and corrected the current Lightning import incompatibility before the local logger adapter took over. Historical source hashes remain unchanged. Earlier statements that no training lifecycle was exercised describe the earlier review stages; this follow-up supersedes that limitation only for the bounded synthetic paths described.
+
+The final default suite passes 32 tests with the opt-in lifecycle skipped. The explicit lifecycle passes separately, including DDSM encoder tensor transfer and distinct EMA/raw screening weights after averaging starts. A clean training-wheel installation outside the checkout repeats this lifecycle with Hugging Face offline, while reusing the observed CPU dependency environment. CI includes the bounded lifecycle as a separate job.

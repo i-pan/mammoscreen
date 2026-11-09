@@ -12,9 +12,9 @@ import pytest
 def test_local_logger_channels_and_nonzero_rank(tmp_path, monkeypatch):
     pytest.importorskip('lightning')
     monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / 'training'))
+    import torch
     from lightning.pytorch.utilities.rank_zero import rank_zero_only
     from mammoscreen_logging import LocalTrainingLogger
-    import torch
 
     monkeypatch.setenv('MAMMOSCREEN_LOG_DIR', str(tmp_path))
     logger = LocalTrainingLogger(project='fixture', mode='debug')
@@ -34,11 +34,18 @@ def test_local_logger_channels_and_nonzero_rank(tmp_path, monkeypatch):
     assert len((tmp_path / 'events.jsonl').read_text().splitlines()) == len(events)
 
 
-def test_training_adapter_preserves_ddp_relaunch_argv(monkeypatch):
+@pytest.mark.parametrize('legacy_export', [False, True])
+def test_training_adapter_preserves_ddp_relaunch_argv(monkeypatch, legacy_export):
     pytest.importorskip('lightning')
     monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / 'training'))
     recipe = importlib.import_module('mammoscreen_recipe')
+    from lightning.pytorch import loggers
     from mammoscreen_logging import LocalTrainingLogger
+    original_export = object() if legacy_export else None
+    if legacy_export:
+        monkeypatch.setattr(loggers, 'NeptuneLogger', original_export, raising=False)
+    else:
+        monkeypatch.delattr(loggers, 'NeptuneLogger', raising=False)
 
     launch = ['mammoscreen_recipe.py', '_train', 'mammo.cfg_recipe_screen', '--devices', '2']
     monkeypatch.setattr(sys, 'argv', launch)
@@ -51,10 +58,15 @@ def test_training_adapter_preserves_ddp_relaunch_argv(monkeypatch):
         observed['logger'] = runner.NeptuneLogger
 
     runner.main = main
-    spec = SimpleNamespace(loader=SimpleNamespace(exec_module=lambda module: None))
+    def load_runner(module):
+        from lightning.pytorch.loggers import NeptuneLogger
+        assert NeptuneLogger is LocalTrainingLogger
+
+    spec = SimpleNamespace(loader=SimpleNamespace(exec_module=load_runner))
     monkeypatch.setattr(recipe.importlib.util, 'spec_from_file_location', lambda *args: spec)
     monkeypatch.setattr(recipe.importlib.util, 'module_from_spec', lambda spec: runner)
     recipe.train_locally(launch[2:])
     assert observed['parsed'] == [launch[0], *launch[2:]]
     assert observed['launch'] == launch
     assert observed['logger'] is LocalTrainingLogger
+    assert getattr(loggers, 'NeptuneLogger', None) is original_export
