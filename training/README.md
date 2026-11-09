@@ -2,6 +2,10 @@
 
 This subtree publishes the training implementation and evidence for the two Hugging Face models. It contains the original SKP runner and supporting modules, preserved mammography recipes, and evaluation notebooks. Reading the source and recorded results does not require recreating the original training environment.
 
+## Active route
+
+For a new run, follow [PIPELINE.md](PIPELINE.md). It connects corrected split generation to explicit three-model initialization/training/evaluation routing. The commands and configs below describe the historical interface and are not the active default recipe.
+
 ## Stages
 
 1. **Breast crop regression:** `skp/configs/mammo/cfg_crop.py` uses MobileNetV3-Small, GeM pooling, a sigmoid four-coordinate head, L1 loss and normalized `xywh` targets. The loader transforms boxes with the image and normalizes after resizing. The crop model card describes largest-component foreground boxes and a 90/10 split. The recovered config uses batch size 128, whereas the published card says 256; its exact final run is not established.

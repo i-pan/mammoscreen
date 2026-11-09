@@ -47,3 +47,13 @@ Independent review found a canonical-path grouping defect: different spellings o
 ## License standardization
 
 At the copyright owner's request, the repository and Ian Pan-authored training code/configs are now distributed under Apache-2.0. All current LICENSE files and both package declarations use Apache-2.0. Historical source origins retain their original licensing history. Embedded third-party attribution and applicable MIT/BSD/Apache notices remain in training/THIRD_PARTY_NOTICES and source comments; training distribution metadata includes these notice files. No training/inference implementation or source-manifest hashes changed.
+
+## Pipeline correction
+
+A pipeline completeness review identified repeated holdout generation and incompatible historical CSV defaults. New code in corrected/splits.py uses locally owned RNG state and patient cancer stratification with grouped validation folds. New mammoscreen_recipe.py and two active config wrappers bind all three model members to each set's hash-checked training CSV, its disjoint holdout, generated DDSM initialization and generated screening EMA checkpoints. Existing historical sources and manifests were not rewritten.
+
+The active guide is training/PIPELINE.md. The training distribution now includes the recipe module and corrected helper namespace/entrypoints so active configs do not depend on omitted source. Recipe validation checks split identities/patient isolation; job preflight checks selected inputs and output refusal before starting training. Evaluation consumes fresh checkpoints, averages cancer probabilities per model/view/breast, computes AUC with ties, and records recipe/checkpoint hashes.
+
+The fresh read-only reviewer assessed this documented route as complete on inspection, without claiming full execution. Focused synthetic tests passed, including active config import and generated checkpoint consumption through the actual evaluation adapter. Full ETL, training dependencies, remote tracking and GPU evaluation were not exercised. Local dataset deletion is not a blocker when the documented public sources are available.
+
+The active path now replaces the historical hosted logger in memory with local JSONL logging. Configuration and metrics are recorded under each fold's logs/events.jsonl; a tracking account is unnecessary. A final independent review identified DDP child relaunch dropping the adapter command. The fix preserves launch arguments outside the historical parser, with regression coverage for parsing and relaunch arguments. Lightning 2.6.6 was installed for bounded logger checks; the full training environment and lifecycle remain unexecuted.

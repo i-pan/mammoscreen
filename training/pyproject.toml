@@ -20,7 +20,14 @@ dependencies = [
 processing = ["pydicom>=3,<4", "transformers>=4.47,<5", "Pillow"]
 evaluation = ["transformers>=4.47,<5", "pydicom>=3,<4"]
 
+[project.scripts]
+mammoscreen-recipe = "mammoscreen_recipe:main"
+mammoscreen-splits = "data_preparation.corrected.splits:main"
+
+[tool.setuptools]
+py-modules = ["mammoscreen_recipe", "mammoscreen_logging"]
+
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["skp*"]
+include = ["skp*", "data_preparation.corrected*"]
 namespaces = true

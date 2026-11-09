@@ -9,9 +9,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-      - run: pip install -e '.[dev,dicom]'
+      - run: pip install -e '.[dev,dicom]' 'lightning>=2.4,<3'
       - run: pytest -q
       - run: ruff check src/mammoscreen --exclude 'src/mammoscreen/_models/**'
-      - run: ruff check training/data_preparation/corrected
+      - run: ruff check training/data_preparation/corrected training/mammoscreen_recipe.py training/mammoscreen_logging.py
       - run: python -m build
       - run: python -m build --wheel training

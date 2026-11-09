@@ -19,3 +19,11 @@ The real-weight check establishes that the integration executes. It does not eva
 ## Corrected preparation utilities
 
 Six synthetic checks cover original-image pixel crop coordinates, largest-component selection, blank-image rejection, CSV outputs, disjoint/overlapping lesion labels, both CSV coordinate orders, normalized path aliases, path escape rejection and overwrite refusal. An independent reviewer identified a mask-path alias overwrite; the CLI regression failed before the fix and passed afterward. The final implementation groups normalized relative paths and creates mask files exclusively. No user dataset processing was run.
+
+## Active split/training/evaluation recipe
+
+The corrected splitter and active recipe are checked with synthetic patient tables: local RNG ownership and deterministic reruns, distinct holdouts, patient isolation, binary/auxiliary label encoding, train-only sampling weights, actual configuration routing, generated DDSM/EMA paths, launch arguments and config-wrapper imports, tampered CSV rejection and probability-mean/AUC semantics. A tiny parameter-only network fixture exercises the real evaluation adapter loading generated-format 11-head EMA checkpoint files and writing predictions/metrics. It does not constitute real-model inference or full training validation.
+
+The historical data, config and notebook sources remain unchanged. The new recipe is a usable new-experiment route, not a claim to recreate historical split memberships or exact original weights. Independent source review found no remaining material handoff/leakage findings for the documented screening route.
+
+The active runner uses a separate local Lightning logger; archived runner bytes remain unchanged. Two bounded tests exercise real Lightning 2.6.6 channel/metric writes, tensor serialization, nonzero-rank suppression and the training adapter's argument handling. DDP relaunch keeps the recipe module and `_train` arguments so each rank applies the logger adapter. No actual distributed process group or training loop was launched. The local suite now contains 30 passing tests.

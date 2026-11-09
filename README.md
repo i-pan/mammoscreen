@@ -2,6 +2,10 @@
 
 Training code, configurations, and evaluation notebooks behind [ianpan/mammoscreen](https://huggingface.co/ianpan/mammoscreen) and the associated [mammo-crop](https://huggingface.co/ianpan/mammo-crop) model. The trained models are hosted on Hugging Face; this repository documents how they were built and evaluated. Prepared CBIS-DDSM images and bounding-box annotations are available in [the associated Kaggle dataset](https://www.kaggle.com/datasets/vaillant/cbis-ddsm).
 
+## Run a new experiment
+
+Use the [corrected end-to-end recipe](training/PIPELINE.md) for downloadable inputs, preparation, patient-disjoint splits, DDSM initialization, all three screening models and evaluation of fresh EMA checkpoints. The historical defaults below are provenance; do not mix their split filenames into new runs.
+
 ## Model training
 
 The screening ensemble uses three EfficientNetV2-S networks. Each backbone is first pretrained with joint classification and segmentation on CBIS-DDSM, then fine-tuned on cropped RSNA screening mammograms with cancer and auxiliary targets. Exponential moving average weights are used for evaluation. Networks operate at 2048 × 1024, 1920 × 1280, and 1536 × 1536; predictions are averaged across views and networks for each breast.
