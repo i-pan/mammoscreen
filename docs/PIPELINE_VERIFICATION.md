@@ -58,7 +58,10 @@ Transformers 4.57.6. This records the exercised versions, not a universal lockfi
 
 No complete real-data ETL, full training run or cohort-performance evaluation was
 performed. Real-data visual inspection and GPU/distributed execution remain
-unverified. A fresh operating-system environment was not rebuilt; installed-wheel
-checks reused the available dependency environment. Independent read-only source
+unverified. Local installed-wheel checks reused the available dependency environment. A
+subsequent [GitHub Actions run](https://github.com/i-pan/mammoscreen/actions/runs/42644056447)
+at code revision `34bb3bf` passed both the ordinary checks/builds and the six-model
+bounded lifecycle on clean Ubuntu runners, including a fresh install of the
+declared training dependencies. Independent read-only source
 review and the bounded runtime checks establish the usable handoffs, rather than
 certifying every hardware/environment combination or exact historical results.
