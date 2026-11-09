@@ -12,5 +12,6 @@ jobs:
       - run: pip install -e '.[dev,dicom]'
       - run: pytest -q
       - run: ruff check src/mammoscreen --exclude 'src/mammoscreen/_models/**'
+      - run: ruff check training/data_preparation/corrected
       - run: python -m build
       - run: python -m build --wheel training

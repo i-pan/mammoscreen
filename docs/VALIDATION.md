@@ -15,3 +15,7 @@ Validated on 2026-11-09 with Python 3.12.11, PyTorch 2.15.0+cpu, torchvision 0.2
 - The built wheel was imported in isolated Python mode and its real CLI path ran both preserved models offline on a synthetic image. JSON outputs were finite, with one cancer probability and four density probabilities summing to approximately one. CLI help and package entry point were also checked.
 
 The real-weight check establishes that the integration executes. It does not evaluate clinical performance, validate calibration or reproduce the published test cohort. CUDA was unavailable on this host; GPU execution is unverified.
+
+## Corrected preparation utilities
+
+Six synthetic checks cover original-image pixel crop coordinates, largest-component selection, blank-image rejection, CSV outputs, disjoint/overlapping lesion labels, both CSV coordinate orders, normalized path aliases, path escape rejection and overwrite refusal. An independent reviewer identified a mask-path alias overwrite; the CLI regression failed before the fix and passed afterward. The final implementation groups normalized relative paths and creates mask files exclusively. No user dataset processing was run.

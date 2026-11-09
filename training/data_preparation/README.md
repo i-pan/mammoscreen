@@ -2,6 +2,10 @@
 
 Recovered from [i-pan/datasets-src](https://github.com/i-pan/datasets-src/tree/74ad10027bed59759af119f8832f6fa6f45a2aec). All included source files match that Git revision before documented formatting/output removal. No scripts were executed during recovery. Data and CSV contents are not bundled. Original paths and some exploratory rough edges remain; review each script before running because scripts execute their dataset writes at top level.
 
+## Corrected utilities
+
+For new preparation work, [corrected/prepare.py](corrected/README.md) supplies tested crop-label and multi-lesion-mask commands. They retain original-image pixel coordinates and preserve disjoint lesion categories. They are new reference implementations, separate from the historical source below; they do not regenerate original split memberships or prove the original labels.
+
 ## RSNA screening workflow
 
 In `rsna-breast-cancer-detection/`:
