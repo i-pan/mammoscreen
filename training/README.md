@@ -28,7 +28,7 @@ Additional configs are historical alternatives, not additional members of the pu
 
 ## Data preparation
 
-Original RSNA DICOM conversion, crop labeling/cropping, three-holdout split generation and DDSM mask/crop/fold preparation are now included in [data_preparation/](data_preparation/README.md). Source code identifies the processing and expected output names; original data and exact split memberships remain unbundled. Initial DDSM PNG/cleaned-box CSV construction is still missing.
+Original RSNA DICOM conversion, crop labeling/cropping, three-holdout split generation and DDSM mask/crop/fold preparation are now included in [data_preparation/](data_preparation/README.md). Source code identifies the processing and expected output names; original data and exact split memberships remain unbundled. The prepared DDSM PNGs and cleaned bounding-box CSV are available in [vaillant/cbis-ddsm](https://www.kaggle.com/datasets/vaillant/cbis-ddsm); the original scripts that constructed that release were not recovered. See the preparation guide for the download layout and verified schema.
 
 ## Data contracts
 

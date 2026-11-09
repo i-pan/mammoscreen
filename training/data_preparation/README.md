@@ -16,14 +16,18 @@ In `rsna-breast-cancer-detection/`:
 
 ## CBIS-DDSM pretraining workflow
 
-In `CBIS-DDSM/`:
+The prepared input data is available from [CBIS-DDSM PNG with Bounding Box ROIs](https://www.kaggle.com/datasets/vaillant/cbis-ddsm), [version 1](https://www.kaggle.com/datasets/vaillant/cbis-ddsm/versions/1). It provides `cleaned_cbis_ddsm.csv` and PNG mammograms, so users can start from this release rather than reconstructing the original DICOM conversion/annotation cleanup.
+
+The verified CSV has 3,568 lesion rows referring to 3,032 unique image paths, with columns `filepath`, `patient_id`, `abnormality`, `pathology`, `subtlety`, `x1`, `y1`, `x2`, `y2`. The archive listing uses `png/png/<filename>.png`; arrange that inner image directory as `ROOT/png/` for these scripts, and place `cleaned_cbis_ddsm.csv` at ROOT. `datasets.json` records the version, schema, counts and annotation checksum. Only metadata and the CSV were inspected; the image payload/full image inventory was not verified.
+
+Starting with those prepared inputs, in `CBIS-DDSM/`:
 
 1. `generate_masks_from_bbox.ipynb` consumes existing `png/` images and `cleaned_cbis_ddsm.csv`, maps benign/malignant calcification/mass categories, draws labeled ellipse masks from bounding boxes, and writes `masks/`. Its helper also relabels all existing foreground on every lesion, so later lesions overwrite earlier categories on mixed-category multi-lesion images. Its final plotting cell refers to a commented-out `mask` variable. These limitations are annotated in the preserved notebook; it is not a validated Run All recipe.
 2. `crop_images_and_masks.ipynb` applies the published crop model and the same box to image/mask pairs, writing `cropped_png/` and `cropped_masks/`. These are the paths expected by the DDSM training configs.
 3. `create_kfold_cv.py` aggregates lesion labels per image and creates patient-grouped nested folds in `train_kfold_cv.csv`.
 4. `generate_patches.ipynb` and `create_kfold_cv_patches.py` support historical patch-based alternatives; the published screening ensemble uses whole-image pretraining/fine-tuning recipes.
 
-`eda.ipynb` inspects existing images/boxes. The initial CBIS-DDSM DICOM-to-PNG conversion and generation of `cleaned_cbis_ddsm.csv`/its bounding boxes are not present in these recovered files. The supplied mask-generation code therefore documents processing downstream of those prerequisites, not a complete raw-download pipeline.
+`eda.ipynb` inspects existing images/boxes. The original scripts that created these PNGs and the cleaned bounding-box CSV are not present in the recovered source. The linked prepared dataset supplies those prerequisites; this repository covers the downstream mask/crop/fold processing and does not claim to reconstruct the raw DICOM-to-prepared-release conversion.
 
 ## Using the source
 

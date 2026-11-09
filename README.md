@@ -1,6 +1,6 @@
 # Mammoscreen training code
 
-Training code, configurations, and evaluation notebooks behind [ianpan/mammoscreen](https://huggingface.co/ianpan/mammoscreen) and the associated [mammo-crop](https://huggingface.co/ianpan/mammo-crop) model. The trained models are hosted on Hugging Face; this repository documents how they were built and evaluated.
+Training code, configurations, and evaluation notebooks behind [ianpan/mammoscreen](https://huggingface.co/ianpan/mammoscreen) and the associated [mammo-crop](https://huggingface.co/ianpan/mammo-crop) model. The trained models are hosted on Hugging Face; this repository documents how they were built and evaluated. Prepared CBIS-DDSM images and bounding-box annotations are available in [the associated Kaggle dataset](https://www.kaggle.com/datasets/vaillant/cbis-ddsm).
 
 ## Model training
 

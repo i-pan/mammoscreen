@@ -1,0 +1,29 @@
+{
+  "cbis_ddsm": {
+    "dataset": "vaillant/cbis-ddsm",
+    "version": 1,
+    "columns": [
+      "filepath",
+      "patient_id",
+      "abnormality",
+      "pathology",
+      "subtlety",
+      "x1",
+      "y1",
+      "x2",
+      "y2"
+    ],
+    "row_count": 3568,
+    "unique_image_paths": 3032,
+    "csv_bytes": 373041,
+    "title": "CBIS-DDSM PNG with Bounding Box ROIs",
+    "url": "https://www.kaggle.com/datasets/vaillant/cbis-ddsm",
+    "version_url": "https://www.kaggle.com/datasets/vaillant/cbis-ddsm/versions/1",
+    "last_updated": "2022-12-04T15:03:45.397Z",
+    "annotation_file": "cleaned_cbis_ddsm.csv",
+    "annotation_sha256": "782292c0cb25532686ca20c3490bee7117df3c259d117b939f53592c9917004b",
+    "archive_image_directory": "png/png",
+    "expected_script_image_directory": "ROOT/png",
+    "verification_scope": "Dataset metadata, first file-list page and annotation CSV inspected; image bytes and full image inventory not downloaded or verified."
+  }
+}
