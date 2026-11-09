@@ -17,6 +17,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+processing = ["pydicom>=3,<4", "transformers>=4.47,<5", "Pillow"]
 evaluation = ["transformers>=4.47,<5", "pydicom>=3,<4"]
 
 [tool.setuptools.packages.find]

@@ -13,6 +13,7 @@ The crop model uses MobileNetV3-Small to regress an `xywh` bounding box and remo
 | Content | Location |
 | --- | --- |
 | Training setup, stages, data contracts, and example commands | [Training guide](training/README.md) |
+| DICOM conversion, crop/mask preparation and split generation | [Data preparation](training/data_preparation/README.md) |
 | Training entry point | [training/skp/train.py](training/skp/train.py) |
 | Mammography recipes | [training/skp/configs/mammo/](training/skp/configs/mammo/) |
 | Training models, datasets, losses, metrics, and EMA | [training/skp/](training/skp/) |
@@ -43,4 +44,4 @@ Training source and import coverage are checked statically. A synthetic screenin
 
 ## License
 
-Recovered SKP training code and configs: MIT, in [training/LICENSE](training/LICENSE). Optional inference integration and HF model implementations: Apache-2.0. Trained weights are hosted in the linked HF repositories.
+Dataset preparation scripts: Apache-2.0 in `training/data_preparation/LICENSE`. Recovered SKP training code and configs: MIT, in [training/LICENSE](training/LICENSE). Optional inference integration and HF model implementations: Apache-2.0. Trained weights are hosted in the linked HF repositories.

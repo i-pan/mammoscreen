@@ -31,3 +31,9 @@ One reader-facing issue was confirmed: `eval_automodel.ipynb` contains unfinishe
 All 23 configs were imported with the existing dependencies. On CPU, the recovered screening model completed a reduced-size 32×32 synthetic forward/loss/backward check and the recovered crop model completed a sigmoid-coordinate forward check. Pretrained downloads were disabled and no optimizer steps or training run were launched. These checks exercise the actual model implementations but do not validate the full Lightning/Neptune/data lifecycle.
 
 Full training runtime dependencies remain unavailable in the review environment (including Lightning, Neptune, MONAI and torcheval). No dependencies were installed solely for review. Distributed/GPU execution, original data and split membership, and original tensor parity remain outside verified scope. Earlier packaging and provenance boundaries remain applicable.
+
+## Data preparation source addition
+
+Thirteen scripts/notebooks from i-pan/datasets-src revision `74ad10027bed59759af119f8832f6fa6f45a2aec` were added after locating the original processing archive. A separate Apache-2.0 license and source manifest record origins and sanitization. Original code cells are retained, outputs/attachments/widgets removed. Independent review confirmed the manifests and public-data boundary.
+
+The preserved crop-label notebook has an inconsistent pixel/normalized scaling section; the mask notebook relabels prior foreground across lesions. Both carry prominent warning markdown and are not advertised as validated Run All pipelines. The preparation guide also documents original split RNG/size caveats and missing initial DDSM PNG/cleaned-CSV generation. No dataset conversion, split generation, model inference, or dataset write was launched while recovering these scripts.

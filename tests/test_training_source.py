@@ -84,3 +84,20 @@ def test_recorded_evaluation_results_match_published_summary():
     assert evidence["auc_by_split"] == [0.9464, 0.9467, 0.9422]
     for value, cell in zip(evidence["auc_by_split"], evidence["result_cells"]):
         assert f"AUC: {value:.4f}" in cell["stdout"]
+
+
+def test_data_preparation_provenance_and_notebook_sanitization():
+    manifest = json.loads((ROOT / "training/data_preparation/source-manifest.json").read_text())
+    assert len(manifest["files"]) == 13
+    for entry in manifest["files"]:
+        path = ROOT / entry["path"]
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == entry["published_sha256"]
+        if path.suffix == ".py":
+            ast.parse(path.read_text())
+        else:
+            notebook = json.loads(path.read_text())
+            assert "widgets" not in notebook["metadata"]
+            for cell in notebook["cells"]:
+                assert not cell.get("outputs")
+                assert not cell.get("attachments")
+                assert not cell["metadata"]

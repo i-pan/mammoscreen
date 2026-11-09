@@ -11,3 +11,7 @@ version-dependent Albumentations default.
 
 Recovered training source under training/skp originates from i-pan/SKP
 and a preserved local snapshot. SKP source and configs are MIT licensed; see training/LICENSE.
+
+Data preparation source under training/data_preparation is derived from
+i-pan/datasets-src revision 74ad10027bed59759af119f8832f6fa6f45a2aec and is Apache-2.0 licensed.
+See training/data_preparation/LICENSE.

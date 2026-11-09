@@ -1,0 +1,140 @@
+{
+  "repository": "https://github.com/i-pan/datasets-src",
+  "revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+  "files": [
+    {
+      "path": "training/data_preparation/CBIS-DDSM/create_kfold_cv.py",
+      "source_path": "CBIS-DDSM/create_kfold_cv.py",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "c1119b58d73ef93d096bab6c54c1d016b390e65d81c72fda1876593d50596629",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "c1119b58d73ef93d096bab6c54c1d016b390e65d81c72fda1876593d50596629",
+      "modifications": []
+    },
+    {
+      "path": "training/data_preparation/CBIS-DDSM/create_kfold_cv_patches.py",
+      "source_path": "CBIS-DDSM/create_kfold_cv_patches.py",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "8d736558a31d5d2363ac7142af32e8ab5d966f66c34ac384d2bdcbc5d4ce5e81",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "8d736558a31d5d2363ac7142af32e8ab5d966f66c34ac384d2bdcbc5d4ce5e81",
+      "modifications": []
+    },
+    {
+      "path": "training/data_preparation/CBIS-DDSM/crop_images_and_masks.ipynb",
+      "source_path": "CBIS-DDSM/crop_images_and_masks.ipynb",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "47a4fa0a3c0f9edcecaf9fe374a463877ba40e6240334c8d1ee79759c07ebf46",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "41a779b650ad35b19848e7b6535bb68bf322416b7d4cf91ff38c3b88a04308e8",
+      "modifications": [
+        "Strip outputs, execution counts, cell metadata, attachments and widget state; preserve source cells"
+      ]
+    },
+    {
+      "path": "training/data_preparation/CBIS-DDSM/eda.ipynb",
+      "source_path": "CBIS-DDSM/eda.ipynb",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "8bce115d55a127bc49e3d32d1adc4fcec3639e38e843386012f899e66642013b",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "3a252573cc17021a6947b6ce6bef8d9546bb157c96828862b714a499bf7156c5",
+      "modifications": [
+        "Strip outputs, execution counts, cell metadata, attachments and widget state; preserve source cells"
+      ]
+    },
+    {
+      "path": "training/data_preparation/CBIS-DDSM/generate_masks_from_bbox.ipynb",
+      "source_path": "CBIS-DDSM/generate_masks_from_bbox.ipynb",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "64bc10e5f7991abf384c4bf18c755e92019426c1445ab79e33d5304d82fa8f16",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "40693a989a8ef5274166a08d85ba2ea8bb23dc1e6dc512200743275c49460a97",
+      "modifications": [
+        "Strip outputs, execution counts, cell metadata, attachments and widget state; preserve source cells",
+        "Add warning markdown for confirmed historical workflow limitation; original source cells unchanged"
+      ]
+    },
+    {
+      "path": "training/data_preparation/CBIS-DDSM/generate_patches.ipynb",
+      "source_path": "CBIS-DDSM/generate_patches.ipynb",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "6b062d92d028fac80a5d09a14b7e782286ba3d4a7afc94cf1818cd9013f5f3b8",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "22b5fb2c1ff4aa662e4a5401033600df8871e39477a611a5b5641435c25c99c1",
+      "modifications": [
+        "Strip outputs, execution counts, cell metadata, attachments and widget state; preserve source cells"
+      ]
+    },
+    {
+      "path": "training/data_preparation/rsna-breast-cancer-detection/convert_dicom_to_png.ipynb",
+      "source_path": "rsna-breast-cancer-detection/convert_dicom_to_png.ipynb",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "6acfbdc9f99371dfa8673306f67a926c57088b1aed26fbb7e025a414e23b7d2f",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "77140baa8c35ef0d580b00dfb9207f8f90ee572821512c529f835485cf7ef4c7",
+      "modifications": [
+        "Strip outputs, execution counts, cell metadata, attachments and widget state; preserve source cells"
+      ]
+    },
+    {
+      "path": "training/data_preparation/rsna-breast-cancer-detection/convert_dicom_to_png.py",
+      "source_path": "rsna-breast-cancer-detection/convert_dicom_to_png.py",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "02dcfe515ca057b8e17903051d1b6c90e05b8100c2a7137c6d8002d4d8b08161",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "02dcfe515ca057b8e17903051d1b6c90e05b8100c2a7137c6d8002d4d8b08161",
+      "modifications": []
+    },
+    {
+      "path": "training/data_preparation/rsna-breast-cancer-detection/create_kfold_cv.py",
+      "source_path": "rsna-breast-cancer-detection/create_kfold_cv.py",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "896dbdec2df51d68943d511665588cee90254f815ce3b2f6122f0bebe8ebade3",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "896dbdec2df51d68943d511665588cee90254f815ce3b2f6122f0bebe8ebade3",
+      "modifications": []
+    },
+    {
+      "path": "training/data_preparation/rsna-breast-cancer-detection/create_kfold_cv_and_holdout_x3.py",
+      "source_path": "rsna-breast-cancer-detection/create_kfold_cv_and_holdout_x3.py",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "1b09df30c32f90c4e0f420193efc11164418b9085a70b3e1641c25cc4db402e1",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "1b09df30c32f90c4e0f420193efc11164418b9085a70b3e1641c25cc4db402e1",
+      "modifications": []
+    },
+    {
+      "path": "training/data_preparation/rsna-breast-cancer-detection/crop_images.py",
+      "source_path": "rsna-breast-cancer-detection/crop_images.py",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "0e0f3ec39306b00290b3460ad8ba615b038dfe5e559c458cf8f894ddbb764246",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "0e0f3ec39306b00290b3460ad8ba615b038dfe5e559c458cf8f894ddbb764246",
+      "modifications": []
+    },
+    {
+      "path": "training/data_preparation/rsna-breast-cancer-detection/get_crop_coords.ipynb",
+      "source_path": "rsna-breast-cancer-detection/get_crop_coords.ipynb",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "236461d3727d1b9ec9eaf123e9472aa866891175a739a377d135aa671fcbea4a",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "2a6b012e488b2ec91fa929331573bcb6ae35a69abc888d908c8211124997ce5b",
+      "modifications": [
+        "Strip outputs, execution counts, cell metadata, attachments and widget state; preserve source cells",
+        "Add warning markdown for confirmed historical workflow limitation; original source cells unchanged"
+      ]
+    },
+    {
+      "path": "training/data_preparation/rsna-breast-cancer-detection/view_cropped.ipynb",
+      "source_path": "rsna-breast-cancer-detection/view_cropped.ipynb",
+      "source_revision": "74ad10027bed59759af119f8832f6fa6f45a2aec",
+      "source_sha256": "25f5ed36023c3c1e8b63447a7874a023710aeada2cabc55423c49e3955eb500a",
+      "upstream_git_revision_matches_source": true,
+      "published_sha256": "ddd2f84fd43fae97ac09aa1556cc35f6b59207958cb01d1c09425524daa2086e",
+      "modifications": [
+        "Strip outputs, execution counts, cell metadata, attachments and widget state; preserve source cells"
+      ]
+    }
+  ],
+  "execution": "Not executed; contains top-level dataset writes and unpinned HF loads in historical scripts"
+}

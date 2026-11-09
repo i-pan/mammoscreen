@@ -26,6 +26,10 @@ Additional configs are historical alternatives, not additional members of the pu
 | EMA updates and validation weight swapping | `skp/callbacks/ema_callback.py` |
 | Learning rate schedule | `skp/optim/linear_warmup_cosine_annealing.py` |
 
+## Data preparation
+
+Original RSNA DICOM conversion, crop labeling/cropping, three-holdout split generation and DDSM mask/crop/fold preparation are now included in [data_preparation/](data_preparation/README.md). Source code identifies the processing and expected output names; original data and exact split memberships remain unbundled. Initial DDSM PNG/cleaned-box CSV construction is still missing.
+
 ## Data contracts
 
 The screening configs expect a CSV with `filename`, `fold`, `breast_id_index`, and targets `cancer`, `biopsy`, `invasive`, `difficult_negative_case`, `BIRADS`, `density`. The dataset trains where `fold != cfg.fold` and validates where `fold == cfg.fold`. With nested CV enabled it excludes the `outer` holdout fold and uses the corresponding `inner{outer}` assignment. The held-out evaluation CSVs are separate from this train/validation routing. Images are cropped grayscale PNGs; the rectangular recipes pad to their aspect ratio before resizing. The square recipe uses longest-side resize and padding.

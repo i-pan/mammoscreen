@@ -2,7 +2,7 @@
 
 ## Training companion
 
-The expanded training subtree has four focused checks: source-manifest hashes and Python syntax, included internal imports and dynamic model/dataset/task references, recovered screening loss versus an independent numerical oracle (including masked auxiliary labels), and consistency of recorded evaluation results. The actual recovered loss was exercised on synthetic logits with backward gradients. All 23 config modules were also imported successfully. The actual recovered screening model passed a reduced-size synthetic forward/loss/backward check and the crop model passed a reduced-size synthetic forward check on CPU, with pretrained downloads disabled. No optimizer step, training loop, GPU run, training dependency environment or original study evaluation was recreated.
+The expanded training subtree has five focused checks: source-manifest hashes and Python syntax, included internal imports and dynamic model/dataset/task references, recovered screening loss versus an independent numerical oracle (including masked auxiliary labels), consistency of recorded evaluation results, and provenance/notebook sanitization for the 13 data-preparation files. The actual recovered loss was exercised on synthetic logits with backward gradients. All 23 config modules were also imported successfully. The actual recovered screening model passed a reduced-size synthetic forward/loss/backward check and the crop model passed a reduced-size synthetic forward check on CPU, with pretrained downloads disabled. No optimizer step, training loop, GPU run, training dependency environment or original study evaluation was recreated.
 
 ## Optional inference integration
 
