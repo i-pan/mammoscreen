@@ -44,4 +44,4 @@ Training source and import coverage are checked statically. A synthetic screenin
 
 ## License
 
-Dataset preparation scripts: Apache-2.0 in `training/data_preparation/LICENSE`. Recovered SKP training code and configs: MIT, in [training/LICENSE](training/LICENSE). Optional inference integration and HF model implementations: Apache-2.0. Trained weights are hosted in the linked HF repositories.
+This repository, including Ian Pan-authored training code, data preparation, and the optional inference integration, is licensed under [Apache-2.0](LICENSE). Third-party implementations retain their required attribution and license notices in [training/THIRD_PARTY_NOTICES](training/THIRD_PARTY_NOTICES). Published model weights retain the licenses stated in their Hugging Face repositories.

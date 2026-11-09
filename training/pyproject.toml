@@ -7,8 +7,8 @@ name = "mammoscreen-training"
 version = "0.1.0"
 description = "Recovered SKP mammography training source"
 requires-python = ">=3.10"
-license = "MIT"
-license-files = ["LICENSE"]
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES"]
 dependencies = [
   "albumentations>=1.4.24,<3", "einops", "matplotlib", "numpy", "pandas",
   "opencv-python-headless", "timm", "torch>=2.1", "torchvision",

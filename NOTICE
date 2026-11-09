@@ -10,7 +10,10 @@ square model, matching its preserved training configuration rather than a
 version-dependent Albumentations default.
 
 Recovered training source under training/skp originates from i-pan/SKP
-and a preserved local snapshot. SKP source and configs are MIT licensed; see training/LICENSE.
+and a preserved local snapshot. Ian Pan-authored training code and configs
+are distributed here under Apache-2.0; see training/LICENSE and training/NOTICE.
+Embedded third-party terms and attribution are retained in
+training/THIRD_PARTY_NOTICES.
 
 Data preparation source under training/data_preparation is derived from
 i-pan/datasets-src revision 74ad10027bed59759af119f8832f6fa6f45a2aec and is Apache-2.0 licensed.

@@ -1,6 +1,6 @@
 # Training provenance
 
-The mammography recipes were recovered from i-pan/SKP and a preserved local source snapshot. The source revision used to recover the complete framework is `81305a8aa81872791a01894ce6b1b6cb242b7157` (MIT licensed).
+The mammography recipes were recovered from i-pan/SKP and a preserved local source snapshot. The source revision used to recover the complete framework is `81305a8aa81872791a01894ce6b1b6cb242b7157` (historically MIT licensed). Ian Pan-authored code is distributed under Apache-2.0 in this repository; retained third-party notices are in `training/THIRD_PARTY_NOTICES`.
 
 ## Screening ensemble
 

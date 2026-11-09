@@ -1,0 +1,14 @@
+Mammoscreen training source
+Copyright (c) 2025–2026 Ian Pan
+
+Ian Pan-authored code is distributed under Apache License 2.0 in this
+repository at the copyright owner's request. The recovered source originated
+from i-pan/SKP revision 81305a8aa81872791a01894ce6b1b6cb242b7157 and the
+preserved local mammography configuration snapshot. The historical upstream
+revision used MIT licensing; its source origin remains recorded unchanged.
+
+Embedded third-party implementations retain their original attribution and
+applicable terms in THIRD_PARTY_NOTICES and in source comments. In particular,
+NAVER AdamP and segmentation_models.pytorch retain their MIT notices, and
+adapted PyTorch source retains its BSD notices. These notices do not change
+the project's Apache-2.0 license.

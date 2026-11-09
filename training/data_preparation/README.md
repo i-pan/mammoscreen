@@ -37,4 +37,4 @@ Starting with those prepared inputs, in `CBIS-DDSM/`:
 
 Install the separate training framework (`pip install -e training`) for `skp.toolbox.functions.create_double_cv`. Additional preparation imports are covered by `pip install -e 'training[processing]'`; appropriate DICOM pixel decoders may also be needed. Adapt ROOT paths first. No original data conversion, splitting or model inference was launched during recovery. Source hashes and transformations are in `source-manifest.json`.
 
-These scripts are Apache-2.0 licensed; see LICENSE. Training framework/configs elsewhere retain their separate MIT license.
+These scripts are Apache-2.0 licensed; see LICENSE. The training framework and configs are also Apache-2.0 in this repository; embedded third-party notices are retained separately.
