@@ -1,6 +1,6 @@
 # Corrected end to end training recipe
 
-This is the active route for a new experiment. Historical notebooks/configs remain source evidence; do not combine their default split paths with this recipe. A new run can have different seeds, split membership and metrics. No full data preparation or training was executed. A bounded synthetic CPU lifecycle check is recorded in the [verification report](../docs/PIPELINE_VERIFICATION.md).
+This is the active route for a new experiment. Historical notebooks/configs remain source evidence; do not combine their default split paths with this recipe. A new run can have different seeds, split membership and metrics. No full data preparation or training was executed. A bounded synthetic CPU lifecycle check is recorded in the [verification report](../docs/VERIFICATION.md).
 
 ## 1 Obtain inputs and install
 
@@ -117,4 +117,4 @@ Evaluate sets 2/3 with their own `--set` and fresh output directories. No histor
 
 Synthetic checks cover local RNG state, distinct patient partitions, leak rejection, actual active config routing, generated checkpoint paths, launcher arguments, CSV identity and probability aggregation/AUC. Full dataset ETL, training, remote tracking and GPU evaluation were not run during implementation. Missing local datasets can be downloaded again; unavailable current training dependencies must be installed in the chosen environment before actual launches.
 
-For runtime evidence, observed dependency versions, the opt-in tiny lifecycle check and remaining GPU/real-data limits, see [bounded pipeline verification](../docs/PIPELINE_VERIFICATION.md).
+For runtime evidence, observed dependency versions, the opt-in tiny lifecycle check and remaining GPU/real-data limits, see [bounded pipeline verification](../docs/VERIFICATION.md).

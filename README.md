@@ -16,7 +16,8 @@ The crop model uses MobileNetV3-Small to regress an `xywh` bounding box and remo
 
 | Content | Location |
 | --- | --- |
-| Training setup, stages, data contracts, and example commands | [Training guide](training/README.md) |
+| End-to-end setup and commands | [Training recipe](training/PIPELINE.md) |
+| Source map, data contracts and historical evidence | [Training reference](training/README.md) |
 | DICOM conversion, crop/mask preparation and split generation | [Data preparation](training/data_preparation/README.md) |
 | Active training/evaluation launcher | [training/mammoscreen_recipe.py](training/mammoscreen_recipe.py) |
 | Preserved historical runner | [training/skp/train.py](training/skp/train.py) |
@@ -45,7 +46,7 @@ This is a training-code companion, not a claim of an exact historical environmen
 
 ## Validation
 
-Training source and import coverage are checked, and a bounded CPU lifecycle exercises all three real DDSM and screening models through validation, checkpoint/EMA saving and evaluation on synthetic data. Compressed-DICOM conversion and the paired crop/fold preparation handoffs were also exercised; see [bounded pipeline verification](docs/PIPELINE_VERIFICATION.md) for exact overrides and remaining limits. The optional inference integration has its own tests and a real-weight CPU smoke check; those checks do not certify training or clinical performance. See [validation](docs/VALIDATION.md) and [training review scope](docs/TRAINING_REVIEW.md).
+The pipeline passed source checks, synthetic preprocessing checks, a bounded CPU training/evaluation lifecycle for all six real models, installed-wheel checks and clean-runner CI. See [verification](docs/VERIFICATION.md) for evidence, repeatable checks and the remaining full-resolution GPU/real-data limits.
 
 ## License
 
